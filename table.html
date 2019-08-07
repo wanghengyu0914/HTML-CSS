@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <style>
+    body {
+      text-align: center;
+    }
+ 
+  </style>
+</head>
+<body>
+    
+<script>
+
+  var headers = ["x","x<sup>2</sup>","1&frasl;x","&#x221A;x"];
+      
+  var table = "<table border='1' cellspacing='0' cellpadding='10px'>";
+  var tableHeaderRow = "";
+  for (var i = 0 ; i < headers.length ; i++){
+    tableHeaderRow+="<th>"+headers[i]+"</th>"
+  }
+  tableHeaderRow = "<tr  style='background-color: gray;'>"+tableHeaderRow+"</tr>";
+  table += tableHeaderRow
+  for (var i = 1 ; i <= 5; i++){
+
+    table += `<tr><td>${i}</td><td>${i*i}</td><td>${(1/i).toFixed(2)}</td><td>${(Math.sqrt(i)).toFixed(2)}</td></tr>`
+    if (i==5){
+      table += "</table>"
+    }
+
+  }
+
+document.writeln(table)
+</script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title> Assignment7.6
+ </title>
+ 
+ <style>
+	input[type="text"]{
+		width:70%;
+		padding:10px;
+		margin:10px;
+	
+	}
+ </style>
+ 
+</head>
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Time Table
+		</title>
+		<style>
+			table, td, th {  
+			border: 1px solid grey;
+			text-align: left;
+			border-collapse: collapse;
+			padding: 6px;
+			}
+			
+			button{
+			
+			font-szie:30px;padding:10px;border-radius:10px;background-color:white}
+		</style>
+		
+	</head>
+	<body> 
+	<center>
+	<p style="font-size:23px;color:#014b7a;">Assignment: 07</p>
+		
+<table width="100%" style="border-color:transparent;">
+	<tr>
+	<td style="width:20%;border-color:transparent;">
+	<a href="../Assignment6/601.html"><img src="back.png" width="60px" style=" top:2%;right: 93%;position: fixed;marging: auto;/"></a>
+				
+	</td>
+	<td style="width:60%;border-color:transparent;">
+
+	<table width="100%" style="border:5px solid #014b7a"> 
+		<tr style="background-color:#014b7a;color:white;font-size:20px;padding:10px;"> 
+			<th style="font-size:24px;">	 
+					<button onclick="myProgram()">3x3 -7x2 + 2x + 5</button> 
+					 <button onclick="call()">Time Now</button>
+					 <button onclick="clickAgain()">Time And Name</button>
+					 <button onclick="forloop()">n numbers</button>
+			</th>
+		</tr>
+	</table>
+	<table width="100%" style="border:5px solid #014b7a">
+		<tr style="background-color:#014b7a;color:white;">
+		<td>
+		<div id="demo" style="font-size:23px;"></div> 
+		</td>
+		</tr>
+		
+		
+	</table>
+<center>
+	<table width="100%">
+<tr>
+<td>
+<input type="text" id="name" placeholder="Enter your name"/>
+<br/>
+<input type="text" id="age" placeholder="Enter your Age"/>
+<br/>
+Gender : <input type="radio" id="gender" name="gender" value="Male"/>Male
+  <input type="radio" id="gender" name="gender" value="Female"/>Female
+<br/>
+ <input type="text" id="phone" placeholder="Enter your Phone Number"/>
+<br/>
+Hobbies: <input type="checkbox" name="check" value="Reading"/>Reading
+  <input type="checkbox" name="check" value="Sports"/>Sports
+  <input type="checkbox" name="check" value="Movies"/>Movies
+  <input type="checkbox" name="check" value="Travelling"/>Travelling
+<br/>
+<br
+<center>
+<button onclick="func()" style="background-color:lightblue;padding:10px;width:40%;">Submit</button>
+</center>
+<br/>
+   <p id="demo"></p>
+<script>
+ 
+    function func() {
+
+	document.getElementById("demo").innerHTML ="";
+    var name=document.getElementById("name").value;
+    var age=document.getElementById("age").value;
+    var gender=document.querySelector('#gender:checked').value;
+	var genderB=document.getElementsByName("gender");
+    var phone= document.getElementById("phone").value;
+    var selected =[];
+    var checkbox=document.getElementsByName("check");
+	  for(var i=0; i<checkbox.length;i++)
+	  {
+				 if (checkbox[i].checked)
+				 {
+				selected.push(checkbox[i].value);
+	   }
+	 
+	   } 
+   
+    
+    if ((((genderB[0].checked)||(genderB[1].checked)) == false) || (name == "") || ((age == "") || (isNaN(age)) || (age < 0)))
+	 alert("Please Enter Your Name, Gender and Age");
+	
+	
+	
+	else
+		 document.getElementById("demo").innerHTML = "Nmae :" + name + "<br/>"+ "Age:" + age +"<br/>"+ "Gender :"+ gender +"<br/>"+ "Phone: " + phone +"<br/>"+ "Hobbies:" + selected +"<br/>";
+    
+           
+            
+}
+
+
+
+function myProgram()
+		{
+		var answer = prompt('Enter any number for computing 3x2 -7x2 + 2x + 5'); 
+		if (answer >= 0 )  
+		{      
+			var result= square(answer); 
+			document.getElementById("demo").innerHTML = "Answer :"+result;
+			
+		 
+		} else 
+		{      alert( 'You entered an invalid number!' ); 
+		}
+		}
+		
+		
+		function square(aa)
+		{
+		  var a= 3 * (aa * aa * aa) -7 * (aa * aa)+ 2 * aa + 5;
+			
+		   return a;
+		}
+		
+		
+		function call()
+		{
+		var time=prompt("What is the Time now??");
+		<!--var date= new Date();-->
+		
+		if(time<12)
+			document.getElementById("demo").innerHTML = "Good Morning";
+		else
+			document.getElementById("demo").innerHTML = "Good Afternoon";
+		}
+
+		function clickAgain()
+		{
+		var time=prompt("What is the Time now??");
+		var name=prompt("What is your name");
+		
+		<!--var date= new Date();-->
+		
+		if(time<12)
+			document.getElementById("demo").innerHTML = 'Good Morning' +" "+ name; 
+		else
+			document.getElementById("demo").innerHTML = 'Good Afternoon'+" "+ name;
+		
+		}
+		
+		
+		
+		function forloop()
+		{
+			var sum=0;
+			var time=prompt("Enter any number");
+			for(var i=1;i<=time;i++)
+			{
+			   sum += i;
+			
+			}
+			document.getElementById("demo").innerHTML ='Total is :'+""+sum;
+		}
+
+	
+</script>
+<script>
+
+  var headers = ["x","x<sup>2</sup>","1&frasl;x","&#x221A;x"];
+      
+  var table = "<table border='1' cellspacing='0' cellpadding='10px'>";
+  var tableHeaderRow = "";
+  for (var i = 0 ; i < headers.length ; i++){
+    tableHeaderRow+="<th>"+headers[i]+"</th>"
+  }
+  tableHeaderRow = "<tr  style='background-color: gray;'>"+tableHeaderRow+"</tr>";
+  table += tableHeaderRow
+  for (var i = 1 ; i <= 5; i++){
+
+    table += `<tr><td>${i}</td><td>${i*i}</td><td>${(1/i).toFixed(2)}</td><td>${(Math.sqrt(i)).toFixed(2)}</td></tr>`
+    if (i==5){
+      table += "</table>"
+    }
+
+  }
+
+document.writeln(table)
+</script>
+</td>
+</tr>
+</table>
+</center>
+		<br/>
+		<hr width="100%"/>
+		
+	
+	</td>
+	<td style="width:20%;border-color:transparent;">
+		<a href="../Assignment8/8.html"><img src="next.png" width="60px" style=" top:2%;left: 93%;position: fixed;marging: auto;/"></a>
+		
+	</td>
+	</tr>
+	</table>
+	
+	</body>
+</html>	
+	
